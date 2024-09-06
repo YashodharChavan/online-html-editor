@@ -38,6 +38,7 @@ To get started with the project, follow these steps:
     Make sure you have Node.js and npm installed. Then, install the project dependencies:
 
     ```bash
+    npm init -y
     npm install
     npm install -D tailwindcss
     npx tailwindcss init -p
