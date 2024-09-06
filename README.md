@@ -29,7 +29,8 @@ To get started with the project, follow these steps:
 1. **Clone the Repository**:
 
     ```bash
-    git clone https://github.com/yourusername/html-online-editor.git
+    git clone https://github.com/YashodharChavan/online-html-editor.git
+    
     ```
 
 2. **Navigate to the Project Directory**:
@@ -44,9 +45,24 @@ To get started with the project, follow these steps:
 
     ```bash
     npm install
+    npm install -D tailwindcss
+    npx tailwindcss init
     ```
+4. **Configure your template paths**:
+    ```bash 
+    /** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+    ````
 
-4. **Run the Development Server**:
+5. **Run the Development Server**:
 
     Start the development server using Vite:
 
@@ -56,7 +72,7 @@ To get started with the project, follow these steps:
 
     The project will be available at `http://localhost:3000`.
 
-5. **Build the Project**:
+6. **Build the Project**:
 
     To create a production build, run:
 
@@ -94,7 +110,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 For any questions or feedback, please contact:
 
 - Email: [yashodhar.vgency@gmail.com](mailto:yashodhar.vgency@gmail.com)
-- GitHub: [https://github.com/yourusername/html-online-editor](https://github.com/yourusername/html-online-editor)
+- GitHub: [https://github.com/YashodharChavan/online-html-editor.git](https://github.com/YashodharChavan/online-html-editor.git)
 
 ---
 
