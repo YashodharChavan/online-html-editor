@@ -33,36 +33,31 @@ To get started with the project, follow these steps:
     
     ```
 
-2. **Navigate to the Project Directory**:
-
-    ```bash
-    cd html-online-editor
-    ```
-
-3. **Install Dependencies**:
+2. **Install Dependencies**:
 
     Make sure you have Node.js and npm installed. Then, install the project dependencies:
 
     ```bash
     npm install
     npm install -D tailwindcss
-    npx tailwindcss init
+    npx tailwindcss init -p
     ```
-4. **Configure your template paths**:
-    ```bash 
+3. **Configure your template paths**:
+    ```js
     /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-}
-    ````
+    module.exports = {
+      content: [
+        "./src/**/*.{js,jsx,ts,tsx}",
+      ],
+      theme: {
+        extend: {},
+      },
+      plugins: [],
+    }
+    ```
 
-5. **Run the Development Server**:
+
+4. **Run the Development Server**:
 
     Start the development server using Vite:
 
@@ -70,9 +65,9 @@ module.exports = {
     npm run dev
     ```
 
-    The project will be available at `http://localhost:3000`.
+    The project will be available at `http://localhost:5173`.
 
-6. **Build the Project**:
+5. **Build the Project**:
 
     To create a production build, run:
 
