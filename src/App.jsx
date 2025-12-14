@@ -5,6 +5,8 @@ import "ace-builds/src-noconflict/theme-monokai";
 import "./App.css";
 import "ace-builds/src-noconflict/theme-monokai";
 import "ace-builds/src-noconflict/theme-github";
+import "ace-builds/src-noconflict/ext-language_tools";
+import "ace-builds/src-noconflict/snippets/html";
 
 
 function App() {
@@ -19,8 +21,8 @@ function App() {
 
   useEffect(() => {
     setEditorTheme(isChecked ? "monokai" : "github");
-    document.body.style.backgroundColor = isChecked? "#272822" : "white";
-    output.current.style.backgroundColor = !isChecked? "white" : "#FFFFCC";
+    document.body.style.backgroundColor = isChecked ? "#272822" : "white";
+    output.current.style.backgroundColor = !isChecked ? "white" : "#FFFFCC";
   }, [isChecked])
 
   const handleClick = () => {
@@ -35,7 +37,7 @@ function App() {
         <div className="left w-full sm:w-1/2 h-full">
           <AceEditor
             mode="html"
-            theme={editorTheme} 
+            theme={editorTheme}
             name="code-editor"
             fontSize={16}
             width="100%"
@@ -43,8 +45,16 @@ function App() {
             value={input}
             onChange={(value) => setInput(value)}
             editorProps={{ $blockScrolling: true }}
-            setOptions={{ useWorker: false }} 
+            setOptions={{
+              useWorker: false,
+              enableBasicAutocompletion: true,
+              enableLiveAutocompletion: true,
+              enableSnippets: true,
+              showLineNumbers: true,
+              tabSize: 2,
+            }}
           />
+
         </div>
 
         <div className="right w-full sm:w-1/2 h-full" ref={output}>
@@ -63,12 +73,12 @@ function App() {
           />
           <label htmlFor="toggle" className="slider absolute cursor-pointer left-[10px] right-0 top-[596px] bottom-[10px] bg-[#ccc] duration-300 rounded-full w-[60px] h-[34px]"></label>
         </div>
-      <button
+        <button
           onClick={handleClick}
           className="bg-blue-400 rounded cursor-pointer px-8 py-2"
         >
           Glance
-      </button>
+        </button>
       </div>
     </>
   );
